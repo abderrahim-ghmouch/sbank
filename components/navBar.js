@@ -1,10 +1,7 @@
 'use strict'
-
-const navBar=document.createElement('div')
-
  export function  navBar (){
     
-    navBar.insertAdjacentHTML('afterbegin',`<div>
+    return `<div>
 
             <img src="">
 
@@ -17,7 +14,7 @@ const navBar=document.createElement('div')
 
 
             </div>
-            `)}
+            `}
 
             
 
