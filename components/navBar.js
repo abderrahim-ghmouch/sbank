@@ -6,10 +6,10 @@
             <img src="">
 
             <div>
-            <a href="/Dashboard">Dashboard</a>
-            <a href="/Offres">offres</a>
-            <a href="/Rewards">rewards </a>
-            <a href="/Profile">profile</a>
+            <a href="/dashboard">Dashboard</a>
+            <a href="/offres">offres</a>
+            <a href="/rewards">rewards </a>
+            <a href="/profile">profile</a>
             </div>
 
 

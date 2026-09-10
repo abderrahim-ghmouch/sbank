@@ -17,33 +17,32 @@ import {Rewards} from "../views/Rewards.js"
 
 
 const routes = {
-    '/': Dashboard,
-    '/Dashboard': Dashboard, 
+  '/': Dashboard,
+    '/dashboard': Dashboard,
     '/login': Login,
-    '/Offres': Offeres,      
+    '/offres': Offeres,
     '/signup': Signup,
     '/credit': Credit,
-    '/Rewards': Rewards
+    '/rewards': Rewards
 }
 
 export const router = function () {
     const root = document.querySelector('#root');
     let path = window.location.pathname;
 
-    if (path === '/index.html') {
+    if (path === '/index.html' || path === '/') {
         path = '/dashboard';
     }
 
-    root.innerHTML = '';
+    root.innerHTML = ''
 
     root.insertAdjacentHTML('beforeend', navBar())
 
     const views = routes[path]
-    if (!views) {
-        root.insertAdjacentElement('beforeend',`<div>404 error</div>`)
-    } else if (views) {
-
-       root.insertAdjacentHTML('beforeend', views());
+   if (!views) {
+        root.insertAdjacentHTML('beforeend', `<div>404 error</div>`);
+    } else {
+        root.insertAdjacentHTML('beforeend', views());
     }
 
 }
