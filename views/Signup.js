@@ -4,7 +4,7 @@
 const root= document.querySelector('#root')
 export const Signup=function()
     {
-        return `<h1>sign up</h1>`
+        root.append( `<h1>sign up</h1>`)
 
 
 

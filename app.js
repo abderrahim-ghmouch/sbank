@@ -4,18 +4,16 @@ import {
 
 window.addEventListener('popstate', router);
 
-
 document.addEventListener('DOMContentLoaded', () => {
 
+    router()
     document.body.addEventListener('click', e => {
-
         if (e.target.matches('a')) {
 
             e.preventDefault()
             window.history.pushState(null, null, e.target.href)
-
             router()
         }
 
     })
-})
+})  
