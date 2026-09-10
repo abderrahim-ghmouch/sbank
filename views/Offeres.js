@@ -1,8 +1,8 @@
 'use strict'
 
 
-export const offers=function(){
+export const Offeres=function(){
 
-
+return `<div>offers</div>`
     
 }

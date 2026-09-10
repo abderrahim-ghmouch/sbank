@@ -1,7 +1,7 @@
 'use strict'
 
 
-export const login=function(){
-
+export const Login=function(){
+return `<div>login</div>`
     
 }
