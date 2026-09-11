@@ -16,6 +16,7 @@ import {Rewards} from "../views/Rewards.js"
 
 
 
+
 const routes = {
   '/': Dashboard,
     '/dashboard': Dashboard,
@@ -34,9 +35,21 @@ export const router = function () {
         path = '/dashboard';
     }
 
-    root.innerHTML = ''
+    const isLoggedIn = localStorage.getItem('currentUser');
+
+    if (!isLoggedIn && path !== '/login' && path !== '/signup') {
+
+        path = '/login';
+        window.history.pushState(null, null, '/login')
+}
+root.innerHTML = ''
+
+if (isLoggedIn){
 
     root.insertAdjacentHTML('beforeend', navBar())
+
+
+}
 
     const views = routes[path]
    if (!views) {
