@@ -1,11 +1,21 @@
 'use strict'
 
+import { AuthForm } from "../components/AuthForm.js"
 
-const root= document.querySelector('#root')
 export const Signup=function()
     {
-        root.append( `<h1>sign up</h1>`)
-
-
-
+        return AuthForm({
+            title: 'join us',
+            titleId: 'signup-title',
+            fields: [
+                { label: 'Name', type: 'text', id: 'name', name: 'name', autocomplete: 'name' },
+                { label: 'Email', type: 'email', id: 'email', name: 'email', autocomplete: 'email' },
+                { label: 'Password', type: 'password', id: 'password', name: 'password', autocomplete: 'new-password' }
+            ],
+            buttonText: 'Sign up',
+            helperText: 'Already have an account?',
+            helperHref: '/login',
+            helperLinkText: 'Login',
+            cardClass: 'signup-card'
+        })   
     }      
