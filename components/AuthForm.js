@@ -17,7 +17,7 @@ export const AuthForm = function ({
                     type="${field.type}"
                     id="${field.id}"
                     name="${field.name}"
-                    autocomplete="${field.autocomplete}"
+                   
                     required>
             </div>
     `).join('')
