@@ -16,6 +16,12 @@ import { Credit } from "../views/Credit.js"
 import { Rewards } from "../views/Rewards.js"
 
 
+import { history } from "../views/History.js"
+
+
+import {profile} from "../views/Profile.js"
+
+
 export const getBasePath = () => window.location.pathname.startsWith('/sbank') ? '/sbank' : ''
 
 const routes = {
@@ -25,7 +31,9 @@ const routes = {
     '/offres': Offeres,
     '/signup': Signup,
     '/credit': Credit,
-    '/rewards': Rewards
+    '/rewards': Rewards,
+    '/history':history,
+    '/profile':profile
 };
 
 export const router = function () {
