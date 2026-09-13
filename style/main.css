@@ -1,5 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+
 * {
     box-sizing: border-box;
+    font-family: "Inria Serif", serif;
 }
 
 body {
@@ -154,11 +157,27 @@ a {
     padding: 40px 20px;
 }
 .dash-welcome {
-    font-family: Georgia, "Times New Roman", serif;
     font-size: 2.2rem;
     margin-bottom: 40px;
-    text-transform: uppercase;
+    
 }
+
+.dash-mini-card {
+    background: #e8eee5;
+    border: 3px solid #101010;
+    box-shadow: 3px 3px 0 #101010;
+    padding: 15px;
+    width: 100%;
+    margin-bottom: 15px;
+    text-align: left;
+    transition: transform 0.1s ease;
+}
+
+.dash-mini-card:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 5px 5px 0 #101010;
+}
+
 
 .dash-com {
     display: grid;
@@ -207,3 +226,284 @@ a {
         grid-template-columns: 1fr;
     }}
 
+
+
+.rewards-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 116px); 
+}
+
+.spinner-container {
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    gap: 30px;
+}
+
+.spinner-wrapper {
+    position: relative; 
+    width: 350px; 
+    height: 350px;
+}
+
+.pointer {
+    position: absolute; 
+    top: -20px; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    width: 0; 
+    height: 0; 
+    border-left: 20px solid transparent; 
+    border-right: 20px solid transparent; 
+    border-top: 40px solid #101010; 
+    z-index: 10;
+}
+
+
+.spinner-wheel {
+    width: 100%; 
+    height: 100%; 
+    border-radius: 50%; 
+    border: 4px solid #101010; 
+    box-shadow: 4px 4px 0 #101010; 
+    background: conic-gradient(
+        #d4ffd1 0deg 60deg, 
+        #bff1ba 60deg 120deg, 
+        #25c967 120deg 180deg, 
+        #d4ffd1 180deg 240deg, 
+        #bff1ba 240deg 300deg, 
+        #25c967 300deg 360deg
+    ); 
+    transition: transform 4s cubic-bezier(0.17, 0.67, 0.1, 1);
+}
+
+
+.spin-btn {
+    background: #25c967; 
+    color: #101010; 
+    font-size: 1.2rem; 
+    font-weight: 800; 
+    padding: 12px 40px; 
+    border: 3px solid #101010; 
+    cursor: pointer; 
+    box-shadow: 4px 4px 0 #101010;
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.spin-btn:active {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0 #101010;
+}
+
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+
+
+.modal-box {
+    background-color: #e8eee5;
+    border: 4px solid #101010;
+    box-shadow: 8px 8px 0 #101010;
+    padding: 40px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    min-width: 320px;
+}
+
+
+.modal-box h2 {
+    margin: 0;
+
+    font-size: 2.5rem;
+
+    color: #25c967;
+
+    text-shadow: 2px 2px 0 #101010;
+}
+.modal-box p {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #101010;
+}
+
+
+.modal-btn {
+    background-color: #bff1ba;
+    color: #101010;
+    border: 3px solid #101010;
+    padding: 12px 24px;
+    font-size: 1.2rem;
+    font-weight: 800;
+    cursor: pointer;
+    box-shadow: 4px 4px 0 #101010;
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
+    margin-top: 10px;
+}
+.modal-hidden {
+    display: none !important;
+}
+
+
+
+.credit-input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.credit-input-group label {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #101010;
+}
+
+.credit-input-group input {
+    width: 100%;
+    height: 50px;
+    font-size: 1.2rem;
+    font-family: "Inria Serif", serif;
+    border: 3px solid #101010;
+    background: #d9d9d9;
+    box-shadow: 2px 2px 0 #101010;
+    padding: 10px 15px;
+    color: #101010;
+    outline: none;
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.credit-input-group input:focus {
+    background: #fff;
+    transform: translate(-2px, -2px);
+    box-shadow: 4px 4px 0 #101010;
+}
+
+.credit-result-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 20px;
+}
+
+.credit-result-group h3 {
+    font-size: 1.3rem;
+    margin: 0;
+    color: #101010;
+}
+
+.credit-result-group .highlight {
+    font-size: 3rem;
+    color: #25c967;
+    text-shadow: 2px 2px 0 #101010;
+    margin: 0;
+    font-weight: 700;
+}
+
+.credit-result-group .normal {
+    font-size: 1.8rem;
+    color: #101010;
+    margin: 0;
+    font-weight: 700;
+}
+/* ///// */
+.offers-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    align-items: stretch;
+    margin-top: 30px;
+}
+
+@media (max-width: 1024px) {
+    .offers-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .offers-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.search-container-box {
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.search-input {
+    width: 100%;
+    height: 60px;
+    background: #e8eee5;
+    border: 4px solid #101010;
+    box-shadow: 6px 6px 0 #101010;
+    font-size: 1.3rem;
+    font-family: "Inria Serif", serif;
+    padding: 10px 20px;
+    color: #101010;
+    outline: none;
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+
+.offers-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    align-items: stretch;
+}
+
+.offer-card {
+    display: flex;
+    background-color: aliceblue;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 15px;
+    height: 100%;
+}
+
+.offer-title {
+    font-size: 1.8rem;
+    color: #101010;
+    margin: 0;
+}
+
+.offer-text {
+    margin: 0;
+    font-size: 1.1rem;
+    line-height: 1.5;
+    color: #101010;
+}
+
+.offer-btn {
+    margin-top: 15px;
+    width: fit-content;
+}
+
+@media (max-width: 1024px) {
+    .offers-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .offers-grid {
+        grid-template-columns: 1fr;
+    }
+}
+/* /////// */
