@@ -1,8 +1,12 @@
 'use strict'
-
+import { spinWheel } from "../components/spin.js"
+import { winModal} from "../components/winModal.js"
 
 export const Rewards=function(){
 
-return `<div>rewards</div>`
+return `<main class="rewards-page">
+        ${spinWheel()}
+        ${winModal()}
+    </main>`
     
 }
