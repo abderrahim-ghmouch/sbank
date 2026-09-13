@@ -19,8 +19,15 @@ import { Rewards } from "../views/Rewards.js"
 import { history } from "../views/History.js"
 
 
+
+import { initCreditSimulation } from "../components/creditForm.js"
 import {profile} from "../views/Profile.js"
 
+import { initSpinWheel } from "../components/spin.js"
+
+import { initWinModal } from "../components/winModal.js"
+
+import { offers } from "../views/Offeres.js"
 
 export const getBasePath = () => window.location.pathname.startsWith('/sbank') ? '/sbank' : ''
 
@@ -46,26 +53,47 @@ export const router = function () {
     }
 
     if (path === '/index.html' || path === '/') {
+
         path = '/dashboard';
     }
 
-    const isLoggedIn = localStorage.getItem('currentUser')
 
+    
+    const isLoggedIn = localStorage.getItem('currentUser')
+    
     if (!isLoggedIn && path !== '/login' && path !== '/signup') {
         path = '/login';
         window.history.pushState(null, null, `${base}/login`)
     }
-
-    root.innerHTML = ''
-
+    
+    root.innerHTML = '' 
+    
     if (isLoggedIn) {
+
         root.insertAdjacentHTML('beforeend', navBar())
     }
-
+    
     const view = routes[path]
     if (!view) {
+
         root.insertAdjacentHTML('beforeend', `<div>404 error</div>`)
     } else {
+
         root.insertAdjacentHTML('beforeend', view())
+    }
+
+    if (path === '/rewards') {
+
+    initSpinWheel()
+    initWinModal()
+    }
+
+    if (path === '/credit') {
+       initCreditSimulation()
+        }
+
+
+        if (path === '/offres') {
+        offers()
     }
 };
